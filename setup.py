@@ -14,6 +14,6 @@ setup(
     long_description_content_type='text/markdown',
     packages=find_packages(),
     install_requires=['jieba', 'rouge',
-                      'torch', 'numpy', 'six', 'unicodedata'],
+                      'torch', 'numpy', 'six'],
     entry_points={}
 )
