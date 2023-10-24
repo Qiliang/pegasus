@@ -1,0 +1,17 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+from setuptools import setup, find_packages
+
+setup(
+    name='tokenizers_pegasus',
+    version='0.0.1',
+    author='xiaoql',
+    author_email='xiaoql@gmail.com',
+    url='https://github.com/Qiliang/pegasus.git',
+    description=u'tokenizers for pegasus',
+    packages=find_packages(),
+    install_requires=['jieba', 'rouge',
+                      'torch', 'numpy', 'six', 'unicodedata'],
+    entry_points={}
+)
