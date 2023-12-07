@@ -5,7 +5,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='tokenizers_pegasus',
-    version='0.0.3',
+    version='0.0.4',
     author='xiaoql',
     author_email='xiaoql@gmail.com',
     url='https://github.com/Qiliang/pegasus.git',
