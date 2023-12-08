@@ -1,12 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 [project]
 name = "tokenizers_pegasus"
-version = "0.0.5"
+version = "0.0.6"
 authors = [
   { name="xiaoql", email="xiaoql@hollycrm.com" },
 ]
 description = "pegasus tokenizers "
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.7"
+dependencies = [
+  "jieba",
+  "rouge",
+  "numpy",
+  "six"
+]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",

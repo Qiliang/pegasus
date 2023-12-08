@@ -1,4 +1,4 @@
-from pegasus.data_utils import (
+from .data_utils import (
     _is_control,
     _is_punctuation,
     _is_whitespace,
