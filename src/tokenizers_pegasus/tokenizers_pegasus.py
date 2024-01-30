@@ -160,6 +160,22 @@ class PegasusTokenizer(PreTrainedTokenizer):
         self.vocab = load_vocab(vocab_file)
         self.old_vocab = deepcopy(self.vocab)
 
+        super().__init__(
+            do_lower_case=do_lower_case,
+            do_basic_tokenize=do_basic_tokenize,
+            never_split=never_split,
+            unk_token=unk_token,
+            sep_token=sep_token,
+            pad_token=pad_token,
+            cls_token=cls_token,
+            mask_token=mask_token,
+            eos_token=eos_token,
+            tokenize_chinese_chars=tokenize_chinese_chars,
+            additional_special_tokens=additional_special_tokens,
+            strip_accents=strip_accents,
+            **kwargs,
+        )
+
         self.vocab[self.eos_token] = self.vocab.pop("[unused1]")
         # self.vocab[self.eos_token] = self.vocab.pop("[unused2]")
         self.vocab[self.pad_token] = self.vocab.pop("[PAD]")
@@ -183,21 +199,7 @@ class PegasusTokenizer(PreTrainedTokenizer):
         self.wordpiece_tokenizer = WordpieceTokenizer(vocab=self.vocab,
                                                       unk_token=self.unk_token)
         
-        super().__init__(
-            do_lower_case=do_lower_case,
-            do_basic_tokenize=do_basic_tokenize,
-            never_split=never_split,
-            unk_token=unk_token,
-            sep_token=sep_token,
-            pad_token=pad_token,
-            cls_token=cls_token,
-            mask_token=mask_token,
-            eos_token=eos_token,
-            tokenize_chinese_chars=tokenize_chinese_chars,
-            additional_special_tokens=additional_special_tokens,
-            strip_accents=strip_accents,
-            **kwargs,
-        )
+
 
     @property
     def do_lower_case(self):
