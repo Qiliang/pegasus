@@ -153,21 +153,7 @@ class PegasusTokenizer(PreTrainedTokenizer):
                 "model use `tokenizer = BertTokenizer.from_pretrained(PRETRAINED_MODEL_NAME)`"
             )
 
-        super().__init__(
-            do_lower_case=do_lower_case,
-            do_basic_tokenize=do_basic_tokenize,
-            never_split=never_split,
-            unk_token=unk_token,
-            sep_token=sep_token,
-            pad_token=pad_token,
-            cls_token=cls_token,
-            mask_token=mask_token,
-            eos_token=eos_token,
-            tokenize_chinese_chars=tokenize_chinese_chars,
-            additional_special_tokens=additional_special_tokens,
-            strip_accents=strip_accents,
-            **kwargs,
-        )
+ 
 
         self.pre_tokenizer = pre_tokenizer
         self.mask_token_sent = mask_token_sent
@@ -196,6 +182,22 @@ class PegasusTokenizer(PreTrainedTokenizer):
             )
         self.wordpiece_tokenizer = WordpieceTokenizer(vocab=self.vocab,
                                                       unk_token=self.unk_token)
+        
+        super().__init__(
+            do_lower_case=do_lower_case,
+            do_basic_tokenize=do_basic_tokenize,
+            never_split=never_split,
+            unk_token=unk_token,
+            sep_token=sep_token,
+            pad_token=pad_token,
+            cls_token=cls_token,
+            mask_token=mask_token,
+            eos_token=eos_token,
+            tokenize_chinese_chars=tokenize_chinese_chars,
+            additional_special_tokens=additional_special_tokens,
+            strip_accents=strip_accents,
+            **kwargs,
+        )
 
     @property
     def do_lower_case(self):
